@@ -1,0 +1,49 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: lightgoldenrodyellow;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100dvh;
+  gap: 2rem;
+}
+
+/* can also target the fieldsets as they are html elements as well */
+fieldset {
+  padding: 1rem;
+}
+
+/* this allows you to select all the inputs that are text only */
+input[type="text"] {
+  width: auto;
+  margin-right: 10px;
+  color: black;
+}
+/* specify attribute with a value: */
+input[type="email"] {
+  width: auto;
+  margin-right: 10px;
+  color: blue;
+}
+/* specficy just an attribute: */
+/* :: is for attributes (note these are not nested elements) note no spaces between word and colons for it to work */
+input::placeholder {
+  font-weight: 700;
+  opacity: 0.4;
+  color: darkgreen;
+}
+/* specify pseudoclasses (only one colon) note no spaces between word and colon for it to work  (one colon for actions)*/
+button :hover {
+  background-color: aquamarine;
+}
+/* here is e.g. of targeting the nested element in the  */
+fieldset legend {
+  color: red;
+}

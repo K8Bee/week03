@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>Forms: structure and styling</h1>
+    <!-- in the past the attribute "action" was used, but we now have other tools to achieve things, which we'll use instead. "action" may just pop up when creating form tag, just delete it -->
+    <form id="">
+      <!-- if you don't have a label you don't know what to put in, this applies ot all users, inc' accesibility (screen readers) -->
+      <!-- as rule of thumb, the for attribute in the lable should be the same as the name in the input -->
+      <!-- attributes for and name are a way to uniquely identify your lable and input. Make sure they match -->
+      <!-- watch video...add something about typing a string -->
+      <!-- form flow: label and input, then match for and name, then validation (that way you don't forget the steps) -->
+      <fieldset>
+        <label for="full-name">Full name: </label>
+        <input
+          type="text"
+          name="full-name"
+          placeholder="Write your full name"
+          required
+        />
+        <!-- have a check (validation) to make sure email is entered in correct format - building filters/ validation points-->
+        <label for="email">Email: </label>
+        <input
+          type="text"
+          name="email"
+          placeholder="Write your email"
+          required
+        />
+        <label for="dob">Date of Birth: </label>
+        <input type="date" name="dob" required />
+        <!-- radio button is to get the user to choose from predetermind answers, e.g. just yes or no, it's like a small circle to click in or not and it fills -->
+        <label for="like">Do you like this website: </label>
+        <input type="text" name="like" required />
+      </fieldset>
+      <!-- when trying to categorise your form it helps to have different fieldsets which each have a legend at the top, to spearate it out a bit and group -->
+      <!-- legend is the way the box (that occurs around your part of form you want, when you use fieldset tag) is telling the user what all the form questions are to do with in this area of the form, helps user know what to do-->
+      <fieldset>
+        <legend>Do you like this website?</legend>
+        <label for="like"
+          ><input type="radio" name="like" value="yes" />Yes
+        </label>
+        <label for="like"
+          ><input type="radio" name="like" value="no" />No
+        </label>
+      </fieldset>
+      <!-- you can then make the radio button choices interaction, e.g. it generates further questions -->
+
+      <!-- when you have a question which would have a lot of answers (more than two), radio button not so good, so can use a select tag -->
+      <fieldset>
+        <legend>What is your favourite icecream flavour?</legend>
+        <label for="icecream-flavour">Icecream flavour</label>
+        <select name="icecream-flavour" id="">
+          <!-- use attribute "selected" to have that the one that initially shows in answer box -->
+          <!-- there's an attribute "hidden" that makes user have to choose one of the options, they then can't go back to the default value that's unable to collect (would have to refresh screen/page) -->
+          <option value="" selected hidden>Pick a flavour</option>
+          <option value="Vanilla">Vanilla</option>
+          <option value="Chocolate">Chocolate</option>
+          <option value="Strawberry">Strawberry</option>
+          <option value="Pistachio">Pistachio</option>
+        </select>
+      </fieldset>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
